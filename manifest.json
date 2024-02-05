@@ -1,0 +1,12 @@
+{
+    "display_name": "Quick Persona",
+    "loading_order": 100,
+    "requires": [],
+    "optional": [],
+    "js": "index.js",
+    "css": "style.css",
+    "author": "Cohee1207",
+    "version": "1.0.0",
+    "homePage": "https://github.com/SillyTavern/Extension-QuickPersona",
+    "auto_update": true
+}

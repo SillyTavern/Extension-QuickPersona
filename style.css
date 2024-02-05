@@ -1,0 +1,83 @@
+body.square-avatars .quickPersonaMenuImg {
+    border-radius: 2px;
+}
+
+#quickPersonaImg, .quickPersonaMenuImg {
+    border-radius: 50%;
+    border: 1px solid transparent;
+    box-shadow: 0 0 5px var(--black50a);
+    outline: 2px solid transparent;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    cursor: pointer;
+}
+
+.quickPersonaMenuImg.default {
+    outline-color: var(--golden);
+}
+
+.quickPersonaMenuImg.selected {
+    outline-color: var(--white70a);
+}
+
+#quickPersonaCaret {
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: calc(var(--bottomFormBlockSize) / 3);
+    height: calc(var(--bottomFormBlockSize) / 3);
+    z-index: 10;
+    font-size: calc(var(--bottomFormBlockSize) / 3);
+    text-shadow: 0 0 5px var(--black50a);
+}
+
+#quickPersona {
+    position: relative;
+    width: var(--bottomFormBlockSize);
+    height: var(--bottomFormBlockSize);
+    order: 10;
+}
+
+#quickPersonaMenu {
+    z-index: 30000;
+    backdrop-filter: blur(var(--SmartThemeBlurStrength));
+    box-shadow: none;
+    --itemsPerRow: 5;
+    --blockWidth: 50px;
+}
+
+body.big-avatars #quickPersonaMenu {
+    --blockWidth: 60px;
+}
+
+#quickPersonaMenu li {
+    width: 50px;
+    height: 50px;
+    padding: 0;
+}
+
+body.big-avatars #quickPersonaMenu li {
+    width: 60px;
+    height: 90px;
+}
+
+body.big-avatars .quickPersonaMenuImg {
+    border-radius: 10px;
+}
+
+#quickPersonaMenu ul {
+    margin: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: calc(var(--itemsPerRow) * var(--blockWidth) + 35px);
+    justify-content: space-around;
+    padding: 5px;
+    gap: 5px;
+    max-height: 75vh;
+    max-height: 75svh;
+    overflow-y: auto;
+}
