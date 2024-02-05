@@ -64,7 +64,8 @@ function closeQuickPersonaSelector() {
 function changeQuickPersona() {
     setTimeout(() => {
         const imgUrl = `${getUserAvatar(user_avatar)}?t=${Date.now()}`;
-        $('#quickPersonaImg').attr('src', imgUrl);
+        const imgTitle = power_user.personas[user_avatar] || user_avatar;
+        $('#quickPersonaImg').attr('src', imgUrl).attr('title', imgTitle);
     }, 100);
 }
 
