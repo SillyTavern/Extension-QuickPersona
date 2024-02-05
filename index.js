@@ -8,7 +8,7 @@ function addQuickPersonaButton() {
     const quickPersonaButton = `
     <div id="quickPersona">
         <img id="quickPersonaImg" src="/img/ai4.png" />
-        <div id="quickPersonaCaret" class="fa-solid fa-caret-up"></div>
+        <div id="quickPersonaCaret" class="fa-fw fa-solid fa-caret-up"></div>
     </div>`;
     $('#leftSendForm').append(quickPersonaButton);
     $('#quickPersona').on('click', () => {
@@ -21,6 +21,10 @@ async function toggleQuickPersonaSelector() {
         closeQuickPersonaSelector();
         return;
     }
+    await openQuickPersonaSelector();
+}
+
+async function openQuickPersonaSelector() {
     isOpen = true;
     const userAvatars = await getUserAvatars(false);
     const quickPersonaList = $('<div id="quickPersonaMenu"><ul class="list-group"></ul></div>');
