@@ -78,4 +78,5 @@ jQuery(() => {
             closeQuickPersonaSelector();
         }
     });
+    changeQuickPersona();
 });
