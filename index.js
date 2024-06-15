@@ -1,5 +1,6 @@
-import { animation_duration, eventSource, event_types, getUserAvatar, getUserAvatars, setUserAvatar, user_avatar } from '../../../../script.js';
+import { animation_duration, eventSource, event_types } from '../../../../script.js';
 import { power_user } from '../../../power-user.js';
+import { retriggerFirstMessageOnEmptyChat, getUserAvatar, getUserAvatars, setUserAvatar, user_avatar } from '../../../personas.js';
 
 let popper = null;
 let isOpen = false;
@@ -39,6 +40,7 @@ async function openQuickPersonaSelector() {
             closeQuickPersonaSelector();
             setUserAvatar(userAvatar);
             changeQuickPersona();
+            retriggerFirstMessageOnEmptyChat();
         });
         quickPersonaList.find('ul').append(listItem);
     }
