@@ -7,7 +7,7 @@ let isOpen = false;
 
 function addQuickPersonaButton() {
     const quickPersonaButton = `
-    <div id="quickPersona">
+    <div id="quickPersona" class="interactable" tabindex="0">
         <img id="quickPersonaImg" src="/img/ai4.png" />
         <div id="quickPersonaCaret" class="fa-fw fa-solid fa-caret-up"></div>
     </div>`;
@@ -34,7 +34,7 @@ async function openQuickPersonaSelector() {
         const imgTitle = power_user.personas[userAvatar] || userAvatar;
         const isSelected = userAvatar === user_avatar;
         const isDefault = userAvatar === power_user.default_persona;
-        const listItem = $('<li class="list-group-item"><img class="quickPersonaMenuImg"/></li>');
+        const listItem = $('<li tabindex="0" class="list-group-item interactable"><img class="quickPersonaMenuImg"/></li>');
         listItem.find('img').attr('src', imgUrl).attr('title', imgTitle).toggleClass('selected', isSelected).toggleClass('default', isDefault);
         listItem.on('click', () => {
             closeQuickPersonaSelector();
